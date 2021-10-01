@@ -135,36 +135,8 @@ def main():
             # Clear gradients w.r.t. parameters
             optimizer.zero_grad()
 
-            sami = cv2.imread('sami.jpg')
-            sami = cv2.cvtColor(sami,cv2.COLOR_BGR2GRAY)
-            dim = (28, 28)
-
-            sami_sized = cv2.resize(sami, dim, interpolation = cv2.INTER_AREA)
-            cv2.imshow('sami',sami_sized)
-            cv2.waitKey(delay=1000)
-
-            sami = np.array(sami_sized)
-            sami = torch.tensor(sami).unsqueeze(0)
-            sami = sami.unsqueeze(0)
-            print('sami size {} image size {}'.format(sami.shape,images.shape))
-            sami = sami/255
-            print(sami)
-       
-   
-
-
-
-
-
-
-
-
-
             # Forward pass to get output/logits
             outputs = model(images)
-            model(sami)
-            print('safe')
-            input()
             # Calculate Loss: softmax --> cross entropy loss
             loss = criterion(outputs, labels)
 
