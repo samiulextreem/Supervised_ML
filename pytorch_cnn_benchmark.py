@@ -1,4 +1,4 @@
-# pytorch modeltesting in CPU and GPU
+# pytorch model speed testing in CPU and GPU
 
 import torch
 import torch.nn as nn
